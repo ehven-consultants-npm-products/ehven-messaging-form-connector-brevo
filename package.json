@@ -1,13 +1,12 @@
 {
   "name": "@ehven/messaging-form-connector-brevo",
-  "version": "0.1.0-dev.0",
-  "private": true,
+  "version": "0.1.0",
   "license": "MIT",
   "type": "module",
   "description": "Send application-composed transactional email through Brevo.",
   "exports": "./src/send-email.mjs",
   "files": [
-    "src"
+    "src/send-email.mjs"
   ],
   "sideEffects": false,
   "engines": {
@@ -19,5 +18,12 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ehven-consultants-npm-products/ehven-messaging-form-connector-brevo.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "homepage": "https://github.com/ehven-consultants-npm-products/ehven-messaging-form-connector-brevo#readme",
+  "bugs": {
+    "url": "https://github.com/ehven-consultants-npm-products/ehven-messaging-form-connector-brevo/issues"
   }
 }

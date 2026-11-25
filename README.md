@@ -1,6 +1,12 @@
 # Brevo messaging form connector
 
-`@ehven/messaging-form-connector-brevo` sends an application-composed transactional email through Brevo. This MIT development candidate targets Node 24 and runs on the server.
+`@ehven/messaging-form-connector-brevo` sends an application-composed transactional email through Brevo. The server connector targets Node.js 24 or later and is MIT licensed.
+
+## Install
+
+```sh
+npm install @ehven/messaging-form-connector-brevo
+```
 
 ```js
 import { sendBrevoEmail } from '@ehven/messaging-form-connector-brevo';
@@ -14,7 +20,7 @@ const receipt = await sendBrevoEmail({
     subject: 'Message received',
     textContent: 'Thank you for getting in touch.',
   },
-  signal,
+  signal: AbortSignal.timeout(10_000),
 });
 ```
 
@@ -24,3 +30,7 @@ const receipt = await sendBrevoEmail({
 - When composing with core, await `sendBrevoEmail` inside the acknowledgment callback and return `{ ok: true }` after success. An acknowledgment failure still permits acceptance after a confirmed primary operation.
 
 The transport tests use synthetic responses. Run `npm ci --ignore-scripts --offline` and `npm run check` to verify the request contract locally.
+
+## Support
+
+Patch releases within 0.1 are intended to be compatible. Future 0.x minor releases may change APIs. Open an issue for bugs and usage questions. For a security concern, use the contact form to request a private reporting channel and keep credentials, tokens and submissions out of the public tracker. [Issues](https://github.com/ehven-consultants-npm-products/ehven-messaging-form-connector-brevo/issues) · [Contact](https://ehven.com/contact/)
